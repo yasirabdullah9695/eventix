@@ -1,0 +1,73 @@
+{
+  "name": "Nomination",
+  "type": "object",
+  "properties": {
+    "student_name": {
+      "type": "string",
+      "description": "Nominee name"
+    },
+    "student_email": {
+      "type": "string",
+      "description": "Nominee email"
+    },
+    "branch": {
+      "type": "string",
+      "description": "Academic branch/department"
+    },
+    "year": {
+      "type": "string",
+      "enum": [
+        "1st Year",
+        "2nd Year",
+        "3rd Year",
+        "4th Year"
+      ],
+      "description": "Academic year"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Contact number"
+    },
+    "house_id": {
+      "type": "string",
+      "description": "House ID"
+    },
+    "position_id": {
+      "type": "string",
+      "description": "Leader position ID"
+    },
+    "application_statement": {
+      "type": "string",
+      "description": "Why they should be elected"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ],
+      "default": "pending",
+      "description": "Admin approval status"
+    },
+    "vote_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of votes received"
+    },
+    "photo_url": {
+      "type": "string",
+      "description": "Nominee photo"
+    }
+  },
+  "required": [
+    "student_name",
+    "student_email",
+    "branch",
+    "year",
+    "phone",
+    "house_id",
+    "position_id",
+    "application_statement"
+  ]
+}

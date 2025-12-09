@@ -1,0 +1,44 @@
+{
+  "name": "GalleryImage",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Image title"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Image URL"
+    },
+    "event_id": {
+      "type": "string",
+      "description": "Related event ID"
+    },
+    "year": {
+      "type": "number",
+      "description": "Year captured"
+    },
+    "month": {
+      "type": "number",
+      "description": "Month captured (1-12)"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Events",
+        "Sports",
+        "Cultural",
+        "Academic",
+        "Campus Life"
+      ],
+      "description": "Image category"
+    }
+  },
+  "required": [
+    "title",
+    "image_url",
+    "year",
+    "month",
+    "category"
+  ]
+}

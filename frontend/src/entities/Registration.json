@@ -1,0 +1,56 @@
+{
+  "name": "Registration",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "Event ID"
+    },
+    "student_name": {
+      "type": "string",
+      "description": "Participant name"
+    },
+    "student_email": {
+      "type": "string",
+      "description": "Participant email"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Contact number"
+    },
+    "branch": {
+      "type": "string",
+      "description": "Academic branch"
+    },
+    "house_id": {
+      "type": "string",
+      "description": "House ID"
+    },
+    "payment_screenshot_url": {
+      "type": "string",
+      "description": "Payment proof screenshot"
+    },
+    "payment_verified": {
+      "type": "boolean",
+      "default": false,
+      "description": "Admin verification status"
+    },
+    "ticket_id": {
+      "type": "string",
+      "description": "Unique ticket identifier"
+    },
+    "attendance_marked": {
+      "type": "boolean",
+      "default": false,
+      "description": "Event attendance status"
+    }
+  },
+  "required": [
+    "event_id",
+    "student_name",
+    "student_email",
+    "phone",
+    "branch",
+    "house_id"
+  ]
+}

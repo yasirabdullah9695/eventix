@@ -1,0 +1,22 @@
+{
+  "name": "LeaderPosition",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Position title (e.g., House Captain, Vice Captain)"
+    },
+    "description": {
+      "type": "string",
+      "description": "Position responsibilities"
+    },
+    "priority": {
+      "type": "number",
+      "description": "Display order priority"
+    }
+  },
+  "required": [
+    "title",
+    "priority"
+  ]
+}

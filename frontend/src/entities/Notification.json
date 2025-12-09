@@ -1,0 +1,43 @@
+{
+  "name": "Notification",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Recipient email"
+    },
+    "title": {
+      "type": "string",
+      "description": "Notification title"
+    },
+    "message": {
+      "type": "string",
+      "description": "Notification message"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "event",
+        "voting",
+        "leaderboard",
+        "general"
+      ],
+      "description": "Notification type"
+    },
+    "read": {
+      "type": "boolean",
+      "default": false,
+      "description": "Read status"
+    },
+    "link": {
+      "type": "string",
+      "description": "Related page link"
+    }
+  },
+  "required": [
+    "user_email",
+    "title",
+    "message",
+    "type"
+  ]
+}

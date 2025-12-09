@@ -1,0 +1,28 @@
+{
+  "name": "Vote",
+  "type": "object",
+  "properties": {
+    "voter_email": {
+      "type": "string",
+      "description": "Email of the voter"
+    },
+    "house_id": {
+      "type": "string",
+      "description": "House ID"
+    },
+    "position_id": {
+      "type": "string",
+      "description": "Position ID"
+    },
+    "nomination_id": {
+      "type": "string",
+      "description": "Nominated candidate ID"
+    }
+  },
+  "required": [
+    "voter_email",
+    "house_id",
+    "position_id",
+    "nomination_id"
+  ]
+}

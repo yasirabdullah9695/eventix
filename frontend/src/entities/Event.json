@@ -1,0 +1,77 @@
+{
+  "name": "Event",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Event name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Event description"
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Event date and time"
+    },
+    "location": {
+      "type": "string",
+      "description": "Event location"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Cultural",
+        "Sports",
+        "Technical",
+        "Academic",
+        "Social"
+      ],
+      "description": "Event category"
+    },
+    "registration_fee": {
+      "type": "number",
+      "default": 0,
+      "description": "Registration fee"
+    },
+    "max_participants": {
+      "type": "number",
+      "description": "Maximum participants allowed"
+    },
+    "payment_qr_url": {
+      "type": "string",
+      "description": "Payment QR code image URL"
+    },
+    "cover_image_url": {
+      "type": "string",
+      "description": "Event cover image"
+    },
+    "house_points": {
+      "type": "number",
+      "default": 0,
+      "description": "Points awarded to winning house"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "upcoming",
+        "ongoing",
+        "completed",
+        "cancelled"
+      ],
+      "default": "upcoming"
+    },
+    "winner_house_id": {
+      "type": "string",
+      "description": "Winning house ID (for completed events)"
+    }
+  },
+  "required": [
+    "name",
+    "description",
+    "date",
+    "location",
+    "category"
+  ]
+}

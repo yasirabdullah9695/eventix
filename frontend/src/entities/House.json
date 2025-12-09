@@ -1,0 +1,31 @@
+{
+  "name": "House",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "House name"
+    },
+    "color": {
+      "type": "string",
+      "description": "House color code"
+    },
+    "logo_url": {
+      "type": "string",
+      "description": "House logo/emblem URL"
+    },
+    "points": {
+      "type": "number",
+      "default": 0,
+      "description": "Total house points"
+    },
+    "description": {
+      "type": "string",
+      "description": "House motto or description"
+    }
+  },
+  "required": [
+    "name",
+    "color"
+  ]
+}
