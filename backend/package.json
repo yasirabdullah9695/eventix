@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node -r dotenv/config index.js",
+    "build": "echo 'Backend build complete'",
     "seed": "node -r dotenv/config seed.js",
     "seed:admin": "node -r dotenv/config seedAdmin.js"
   },

@@ -1,0 +1,28 @@
+{
+  "name": "eventix-fullstack",
+  "version": "1.0.0",
+  "description": "Full-stack event management application",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "build:all": "cd frontend && npm run build",
+    "deploy:all": "npm run build:all",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start",
+    "start:all": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "dev": "npm run start:all"
+  },
+  "keywords": [
+    "event",
+    "management",
+    "voting",
+    "react",
+    "nodejs",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
