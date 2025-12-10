@@ -1,6 +1,5 @@
 {
   "buildCommand": "npm run build:all",
-  "deployCommand": "npm run deploy:all",
   "framework": "create-react-app",
   "functions": {
     "api/**": {
