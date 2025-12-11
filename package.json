@@ -4,8 +4,8 @@
   "description": "Full-stack event management application",
   "private": true,
   "scripts": {
-    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
-    "build:all": "cd frontend && npm run build",
+    "install:all": "npm install --legacy-peer-deps && cd frontend && npm install --legacy-peer-deps && cd ../backend && npm install --legacy-peer-deps",
+    "build:all": "npm install --legacy-peer-deps && cd frontend && npm install --legacy-peer-deps && npm run build",
     "deploy:all": "npm run build:all",
     "start:backend": "cd backend && npm start",
     "start:frontend": "cd frontend && npm start",
