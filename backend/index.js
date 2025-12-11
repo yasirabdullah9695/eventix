@@ -78,7 +78,13 @@ io.on('connection', (socket) => {
 module.exports = { app, io };
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI, {
+const mongoUri = process.env.MONGO_URI;
+if (!mongoUri) {
+    console.error('ERROR: MONGO_URI environment variable is not set!');
+    process.exit(1);
+}
+
+mongoose.connect(mongoUri, {
 })
 .then(async () => { // Make the callback async
     console.log('MongoDB connected');
