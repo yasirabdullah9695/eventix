@@ -1,17 +1,8 @@
 {
-  "buildCommand": "npm run build:all",
+  "buildCommand": "cd frontend && npm run build",
   "framework": "create-react-app",
-  "functions": {
-    "api/**": {
-      "runtime": "nodejs20.x"
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
-    }
-  ],
+  "installCommand": "npm install && cd frontend && npm install",
+  "outputDirectory": "frontend/build",
   "headers": [
     {
       "source": "/(.*)",
