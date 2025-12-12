@@ -1,8 +1,8 @@
 
 {
-  "buildCommand": "npm --prefix frontend run build",
+  "buildCommand": "sh -lc \"if [ -f frontend/package.json ]; then npm --prefix frontend run build; else npm run build; fi\"",
   "framework": "create-react-app",
-  "installCommand": "npm --prefix frontend install --legacy-peer-deps",
+  "installCommand": "sh -lc \"if [ -f frontend/package.json ]; then npm --prefix frontend install --legacy-peer-deps; else npm install --legacy-peer-deps; fi\"",
   "outputDirectory": "frontend/build",
   "headers": [
     {
