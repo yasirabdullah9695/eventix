@@ -1,0 +1,26 @@
+What I changed to fix Vercel install error:
+
+- Problem: `installCommand` in `vercel.json` ran `npm install` at the repository root first and then `cd frontend && npm install`.
+  - Root `npm install` was failing in Vercel (native modules, peer deps), causing the overall build to fail.
+
+- Fix applied:
+  - Updated `vercel.json` to install only the frontend dependencies using `npm --prefix frontend install --legacy-peer-deps`.
+  - Updated `buildCommand` to run the frontend build directly: `npm --prefix frontend run build`.
+  - Kept `outputDirectory` as `frontend/build`.
+
+Why this works:
+- Vercel runs `installCommand` before `buildCommand`. Installing only frontend dependencies prevents root/backend installs from causing failures.
+- Using `npm --prefix frontend` avoids changing directories and is reliable in CI.
+
+If problems continue:
+- Check Vercel build logs for the exact npm error (missing Python, node-gyp, or permission issues).
+- Try using `npm --prefix frontend ci --legacy-peer-deps` if `package-lock.json` exists in `frontend`.
+- As a fallback, build frontend locally and push the static `frontend/build` folder to a branch and point Vercel to serve static files.
+
+Commands I used locally to apply and push the change:
+
+cd "C:\\Users\\yasir abdullah\\Desktop\\base44"
+git add vercel.json
+git commit -m "Fix Vercel install: install only frontend deps and build frontend directly"
+git push origin main
+
