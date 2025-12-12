@@ -23,7 +23,8 @@ import {
   Megaphone
 } from "lucide-react";
 
-const API_URL = "http://localhost:5000/api";
+// Use environment variable for API URL in production, fallback to localhost for dev
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
 
 // Headline Marquee Component
 const HeadlineMarquee = ({ message }) => {
@@ -72,7 +73,7 @@ const ImageSlider = () => {
       description: "Join exciting campus events",
     },
     {
-      url: "/image/img5.jpg",
+      url: "/img5.jpg",
       title: "Innovation Hub",
       description: "Where ideas come to life",
     },
