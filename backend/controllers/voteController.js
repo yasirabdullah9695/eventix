@@ -491,17 +491,33 @@ const resetVoteResults = async (req, res) => {
 
         // 3. Clear winner from position
         if (position.house_id) {
-            await LeaderPosition.findByIdAndUpdate(
-                positionId,
-                { $pull: { houseWinners: { house: houseId } } },
-                { new: true }
-            );
+            if (houseId) {
+                // Clear winner for specific house
+                await LeaderPosition.findByIdAndUpdate(
+                    positionId,
+                    { $pull: { houseWinners: { house: houseId } } },
+                    { new: true }
+                );
+                // Also remove winner entries from the specific House document
+                await House.findByIdAndUpdate(houseId, { $pull: { winners: { position_id: positionId } } });
+            } else {
+                // No houseId provided -> clear all house winners for this position
+                await LeaderPosition.findByIdAndUpdate(
+                    positionId,
+                    { $set: { houseWinners: [] } },
+                    { new: true }
+                );
+                // Also remove winner entries from all houses for this position
+                await House.updateMany({}, { $pull: { winners: { position_id: positionId } } });
+            }
         } else {
             await LeaderPosition.findByIdAndUpdate(
                 positionId,
                 { $set: { overallWinner: null } },
                 { new: true }
             );
+            // Also clear overall winner reference from all houses if any
+            await House.updateMany({}, { $pull: { winners: { position_id: positionId } } });
         }
 
         console.log('[RESET] Position updated');
